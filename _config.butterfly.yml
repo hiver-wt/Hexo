@@ -40,12 +40,12 @@ social:
 # --------------------------------------
 
 # Favicon（網站圖標）
-favicon: /img/galgyo.gif
+favicon: /img/favicon.png
 
 # Avatar (頭像)
 # 有问题
 avatar:
-  img: /img/galgyo.gif #https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png
+  img: /image/galgyo.gif #https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png
   effect: false
 
 # Disable all banner image
