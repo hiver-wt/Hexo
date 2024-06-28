@@ -219,7 +219,7 @@ footer:
     enable: true
     since: 2024
   custom_text:
-  copyright: true # Copyright of theme and framework
+  copyright: false # Copyright of theme and framework
 
 # aside (側邊欄)
 # --------------------------------------
