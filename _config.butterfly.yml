@@ -45,7 +45,7 @@ favicon: /img/avatar.png
 # Avatar (頭像)
 # 有问题
 avatar:
-  img: /img/galgyo.gif #https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png
+  img: https://github.com/zz1009959/Hexo/blob/master/source/img/galgyo.gif #https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png
   effect: false
 
 # Disable all banner image
