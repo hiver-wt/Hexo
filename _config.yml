@@ -73,22 +73,22 @@ search:
 
 # hexo-butterfly-categories-card
 # see https://akilar.top/posts/a9131002/
-# categoryBar:
-#   enable: true # 开关
-#   priority: 5 #过滤器优先权
-#   enable_page: /Hexo/ # 应用页面
-#   layout: # 挂载容器类型
-#     type: id
-#     name: recent-posts
-#     index: 0
-#   column: odd # odd：3列 | even：4列
-#   row: 1 #显示行数，默认两行，超过行数切换为滚动显示
-#   message:
-#     - descr: C++
-#       cover: https://assets.akilar.top/image/cover1.webp
-#     - descr: CG
-#       cover: https://assets.akilar.top/image/cover2.webp
-#   custom_css: https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css
+categoryBar:
+  enable: true # 开关
+  priority: 5 #过滤器优先权
+  enable_page: /Hexo/ # 应用页面
+  layout: # 挂载容器类型
+    type: id
+    name: recent-posts
+    index: 0
+  column: odd # odd：3列 | even：4列
+  row: 1 #显示行数，默认两行，超过行数切换为滚动显示
+  message:
+    - descr: C++
+      cover: /image/index5.jpg
+    - descr: CG
+      cover: /image/index6.jpg
+  custom_css: https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css
 
 # 小冰的分类磁贴
 magnet:
@@ -99,10 +99,10 @@ magnet:
   devide: 2
   display:
     - name: C++
-      display_name: 小冰の魔改教程
+      display_name: C++
       icon: 📚
     - name: CG
-      display_name: 小冰の游戏评测
+      display_name: CG
       icon: 🎮
     # - name: C++
     #   display_name: 小冰の编程学习
