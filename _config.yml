@@ -6,7 +6,7 @@ author: hiver
 language: en
 timezone: ''
 url: https://zz1009959.github.io/Hexo
-root: /Hexo/
+root: /zz1009959.github.io
 permalink: ':year/:month/:day/:title/'
 permalink_defaults: null
 pretty_urls:
