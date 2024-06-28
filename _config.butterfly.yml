@@ -655,7 +655,7 @@ text_align_justify: false
 # Website Background (設置網站背景)
 # can set it to color or image (可設置圖片 或者 顔色)
 # The formal of image: url(http://xxxxxx.com/xxx.jpg)
-background: https://github.com/zz1009959/Hexo/blob/master/source/image/per.jpg
+background: url(https://github.com/zz1009959/Hexo/blob/master/source/image/per.jpg)
 
 # Footer Background
 footer_bg: false
