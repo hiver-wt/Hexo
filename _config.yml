@@ -64,3 +64,9 @@ deploy:
   type: git
   repo: https://github.com/zz1009959/Hexo.git
   branch: gh-pages
+
+# 本地搜索
+search:
+  path: search.xml
+  field: post
+  content: true
