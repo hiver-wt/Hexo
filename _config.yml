@@ -95,7 +95,7 @@ magnet:
   enable: true
   priority: 1
   enable_page: /
-  type: categories
+  type: "categories"
   devide: 2
   display:
     - name: C++
