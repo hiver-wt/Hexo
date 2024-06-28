@@ -655,7 +655,7 @@ text_align_justify: false
 # Website Background (設置網站背景)
 # can set it to color or image (可設置圖片 或者 顔色)
 # The formal of image: url(http://xxxxxx.com/xxx.jpg)
-background: /image/per.jpg
+background: url(https://github.com/zz1009959/Hexo/blob/master/source/image/per.jpg)
 
 # Footer Background
 footer_bg: false
@@ -1009,38 +1009,3 @@ CDN:
     # valine:
     # waline_css:
     # waline_js:
-
-# 小冰的分类磁贴
-# magnet:
-#   enable: true
-#   priority: 1
-#   enable_page: /
-#   type: categories
-#   devide: 2
-#   display:
-#     - name: c++
-#       display_name: 小冰の魔改教程
-#       icon: 📚
-#     - name: CG
-#       display_name: 小冰の游戏评测
-#       icon: 🎮
-#     # - name: C++
-#     #   display_name: 小冰の编程学习
-#     #   icon: 👩‍💻
-#     # - name: 学习
-#     #   display_name: 小冰の读书笔记
-#     #   icon: 📒
-#     # - name: 随想
-#     #   display_name: 小冰の胡思乱想
-#     #   icon: 💡
-#   color_setting:
-#     text_color: black
-#     text_hover_color: white
-#     background_color: "#f2f2f2"
-#     background_hover_color: "#b30070"
-#   layout:
-#     type: id
-#     name: recent-posts
-#     index: 0
-#   temple_html: '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet">${temple_html_item}</div></div>'
-#   plus_style: ""
