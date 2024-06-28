@@ -5,8 +5,8 @@ keywords: null
 author: hiver
 language: en
 timezone: ''
-url: https://zz1009959.github.io/Hexo
-root: /zz1009959.github.io
+url: https://zz1009959.github.io
+root: /Hexo/
 permalink: ':year/:month/:day/:title/'
 permalink_defaults: null
 pretty_urls:
