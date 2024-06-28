@@ -661,7 +661,7 @@ background: url(/image/per.jpg)
 footer_bg: false
 
 # Add mask to header or footer (为 header 或 footer 添加黑色半透遮罩)
-mask:i
+mask: i
   header: true
   footer: true
 
