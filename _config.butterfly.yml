@@ -88,10 +88,10 @@ cover:
   position: both
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover:
-    - https://github.com/zz1009959/Hexo/blob/master/source/image/index1.jpg
-    - https://github.com/zz1009959/Hexo/blob/master/source/image/index2.jpg
-    - https://github.com/zz1009959/Hexo/blob/master/source/image/index3.jpg
-    - https://github.com/zz1009959/Hexo/blob/master/source/image/index4.jpg
+    - /image/index1.jpg
+    - /image/index2.jpg
+    - /image/index3.jpg
+    - /image/index4.jpg
     
 
 # Replace Broken Images (替換無法顯示的圖片)
