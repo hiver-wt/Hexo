@@ -105,8 +105,8 @@ magnet:
     index: 0
   temple_html: '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet">${temple_html_item}</div></div>'
   plus_style: ""
-inject:
-head:
-  - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'">
-bottom:
-  # - <script src="xxxx"></script>
+  inject:
+  head:
+    - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'">
+  bottom:
+    # - <script src="xxxx"></script>
