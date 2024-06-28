@@ -79,7 +79,7 @@ magnet:
   type: categories
   devide: 2
   display:
-    - name: c++
+    - name: C++
       display_name: 小冰の魔改教程
       icon: 📚
     - name: CG

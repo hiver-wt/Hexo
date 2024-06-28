@@ -2,7 +2,7 @@
 title: test
 date: 2024-06-28 18:45:41
 tags: test
-categories: c++
+categories: C++
 ---
 # 测试文章
 
