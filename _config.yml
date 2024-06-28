@@ -94,8 +94,8 @@ categoryBar:
 magnet:
   enable: true
   priority: 1
-  enable_page: /
-  type: "categories"
+  enable_page: /Hexo
+  type: categories
   devide: 2
   display:
     - name: C++
