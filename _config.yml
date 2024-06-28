@@ -76,7 +76,7 @@ magnet:
   enable: true
   priority: 1
   enable_page: /
-  type: tags
+  type: categories
   devide: 2
   display:
     - name: test
