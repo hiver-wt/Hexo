@@ -59,6 +59,10 @@
     font-display: block;
 }
 
+body {
+    font-family: 'YOUYUAN';
+}
+
 /* 翻页按钮居中 */
 #pagination {
     width: 100%;
