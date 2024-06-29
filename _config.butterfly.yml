@@ -151,7 +151,7 @@ post_meta:
 # 3: auto_excerpt (default)
 # false: do not show the article introduction
 index_post_content:
-  method: 3
+  method: 2
   length: 500 # if you set method to 2 or 3, the length need to config
 
 # anchor
@@ -950,7 +950,7 @@ inject:
     - <link rel="stylesheet" href="/blog/css/headmenu.css" media="defer" onload="this.media='all'">
   bottom:
     # - <script src="xxxx"></script>
-    - <script async src="//at.alicdn.com/t/c/font_4603888_c8nuq8eg01d.js"></script> 
+    - <script async src="//at.alicdn.com/t/c/font_4603888_sozuxhr7i9m.js"></script> 
 
 # CDN
 # Don't modify the following settings unless you know how they work
@@ -1029,3 +1029,7 @@ CDN:
     # valine:
     # waline_css:
     # waline_js:
+
+# 主页卡片样式
+# Docs: https://akilar.top/posts/d6b69c49/
+index_card_style: multicard # slidecard | multicard
