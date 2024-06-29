@@ -500,6 +500,21 @@ div#archive {
     font-weight: bold;
 }
 
+#post-meta {
+    color: lightblue;
+}
+
+#post-meta .meta-firstline,
+#post-meta .meta-secondline,
+#post-meta .post-meta-date,
+#post-meta .post-meta-categories,
+#post-meta .post-meta-pv-cv,
+#post-meta .post-meta-label,
+#post-meta .post-meta-icon {
+    color: lightblue;
+}
+
+
 /* 自定义图标 */
 svg.icon {
     width: 1.28em;
