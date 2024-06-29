@@ -1,5 +1,5 @@
 #nav {
-    font-size: 1.4em;
+    font-size: 1.5em;
     /* 稍微增大整体字体 */
 }
 
@@ -15,14 +15,14 @@
 }
 
 .menus_item {
-    margin: 0 8px;
+    margin: 0 4px;
     /* 增加导航项之间的间距 */
 }
 
 .site-page {
     display: flex;
     align-items: center;
-    padding: 5px 10px;
+    padding: 2px 4px;
     /* 增加内边距，使点击区域更大 */
     transition: background-color 0.3s;
     border-radius: 5px;
@@ -35,7 +35,7 @@
 
 .site-page i,
 .site-page svg {
-    margin-right: 5px;
+    margin-right: 3px;
     /* 图标和文字之间的间距 */
 }
 
