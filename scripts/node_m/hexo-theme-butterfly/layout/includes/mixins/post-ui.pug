@@ -12,7 +12,6 @@ mixin postUI(posts)
         let no_cover = article.cover === false || !theme.cover.index_enable ? 'no-cover' : ''
       -
       .recent-post-content(class=leftOrRight)
-        .recent-post-cover-shadow
         .recent-post-cover
           img.article-cover(src=url_for(post_cover) onerror=`this.onerror=null;this.src='`+ url_for(theme.error_img.post_page) + `'` alt=title)
         .recent-post-info
@@ -22,18 +21,24 @@ mixin postUI(posts)
             .article-meta-wrap
               if (is_home() && (article.top || article.sticky > 0))
                 span.article-meta
-                  i.fas.fa-thumbtack.sticky
+                  //- i.fas.fa-thumbtack.sticky
+                  svg.meta_icon(style="width:16px;height:16px;position:relative;top:3px").post-ui-icon
+                    use(xlink:href='#icon-tuding')
                   span.sticky= _p('sticky')
-                  span.article-meta-separator |
+                  span.article-meta-separator  | 
               if (theme.post_meta.page.date_type)
                 span.post-meta-date
                   if (theme.post_meta.page.date_type === 'both')
-                    i.far.fa-calendar-alt
+                    //- i.far.fa-calendar-alt
+                    svg.meta_icon(style="width:21px;height:21px;position:relative;top:6px").post-ui-icon
+                      use(xlink:href='#icon-rili')
                     span.article-meta-label=_p('post.created')
                     time.post-meta-date-created(datetime=date_xml(article.date) title=_p('post.created') + ' ' + full_date(article.date))=date(article.date, config.date_format)
-                    span.article-meta-separator |
-                    i.fas.fa-history
-                    span.article-meta-label=_p('post.updated')
+                    span.article-meta-separator  | 
+                    //- i.fas.fa-history
+                    svg.meta_icon(style="width:13px;height:13px;position:relative;top:2px").post-ui-icon
+                      use(xlink:href='#icon-icon--gengxin')                    
+                    span.article-meta-label=_p('post.updated') + " "
                     time.post-meta-date-updated(datetime=date_xml(article.updated) title=_p('post.updated') + ' ' + full_date(article.updated))=date(article.updated, config.date_format)
                   else
                     - let data_type_updated = theme.post_meta.page.date_type === 'updated'
@@ -45,26 +50,32 @@ mixin postUI(posts)
                     time(datetime=date_xml(article[date_type]) title=date_title + ' ' + full_date(article[date_type]))=date(article[date_type], config.date_format)
               if (theme.post_meta.page.categories && article.categories.data.length > 0)
                 span.article-meta
-                  span.article-meta-separator |
-                  i.fas.fa-inbox
+                  span.article-meta-separator  | 
+                  //- i.fas.fa-inbox
+                  svg.meta_icon(style="width:12px;height:12px;position:relative;top:1px").post-ui-icon
+                    use(xlink:href='#icon-fenlei')
                   each item, index in article.categories.data
                     a(href=url_for(item.path)).article-meta__categories #[=item.name]
                     if (index < article.categories.data.length - 1)
                       i.fas.fa-angle-right.article-meta-link
               if (theme.post_meta.page.tags && article.tags.data.length > 0)
                 span.article-meta.tags
-                  span.article-meta-separator |
-                  i.fas.fa-tag
+                  span.article-meta-separator  | 
+                  //- i.fas.fa-tag
+                  svg.meta_icon(style="width:13px;height:13px;position:relative;top:2px").post-ui-icon
+                    use(xlink:href='#icon-biaoqian')
                   each item, index in article.tags.data
                     a(href=url_for(item.path)).article-meta__tags #[=item.name]
                     if (index < article.tags.data.length - 1)
-                      span.article-meta-link #[='•']
+                      span.article-meta-link #[=' • ']
               
               mixin countBlockInIndex
                 - needLoadCountJs = true
                 span.article-meta
-                  span.article-meta-separator |
-                  i.fas.fa-comments
+                  span.article-meta-separator  | 
+                  //- i.fas.fa-comments
+                  svg.meta_icon(style="width:13px;height:13px;position:relative;top:2px").post-ui-icon
+                    use(xlink:href='#icon-pinglun1')
                   if block
                     block
                   span.article-meta-label= ' ' + _p('card_post_count')
