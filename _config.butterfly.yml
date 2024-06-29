@@ -937,7 +937,7 @@ inject:
     - <link rel="stylesheet" href="/blog/css/headmenu.css" media="defer" onload="this.media='all'">
   bottom:
     # - <script src="xxxx"></script>
-    - <script async src="//at.alicdn.com/t/c/font_4603888_psgxuvxqu9l.js"></script> 
+    - <script async src="//at.alicdn.com/t/c/font_4603888_c8nuq8eg01d.js"></script> 
 
 # CDN
 # Don't modify the following settings unless you know how they work
