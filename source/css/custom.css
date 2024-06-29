@@ -498,3 +498,54 @@ div#archive {
     /* 调整这个值以移动到合适位置 */
     text-align: center;
 }
+
+/* 文章总结部分 */
+.post-copyright {
+    background-color: #f9f9f9;
+    /* 背景色 */
+    border: 1px solid #ddd;
+    /* 边框 */
+    padding: 15px;
+    /* 内边距 */
+    margin-top: 20px;
+    /* 顶部外边距 */
+    border-radius: 8px;
+    /* 圆角 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* 阴影 */
+    font-family: Arial, sans-serif;
+    /* 字体 */
+}
+
+.post-copyright__author,
+.post-copyright__type,
+.post-copyright__notice {
+    margin-bottom: 10px;
+    /* 底部外边距 */
+}
+
+.post-copyright-meta {
+    font-weight: bold;
+    /* 加粗字体 */
+    margin-right: 5px;
+    /* 右边距 */
+}
+
+.post-copyright-info a {
+    color: #007bff;
+    /* 链接颜色 */
+    text-decoration: none;
+    /* 去掉下划线 */
+}
+
+.post-copyright-info a:hover {
+    text-decoration: underline;
+    /* 鼠标悬停时添加下划线 */
+}
+
+.post-copyright__author i,
+.post-copyright__type i,
+.post-copyright__notice i {
+    margin-right: 5px;
+    /* 图标右边距 */
+}
