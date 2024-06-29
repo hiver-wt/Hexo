@@ -50,7 +50,7 @@
     /* 为载入的字体取名字(随意) */
     font-family: 'YOUYUAN';
     /* 字体文件地址(相对或者绝对路径都可以) */
-    src: url(/font/zhuziA.TTF);
+    src: url(/blog/font/zhuziA.TTF);
     /* 定义加粗样式(加粗多少) */
     font-weight: normal;
     /* 定义字体样式(斜体/非斜体) */
@@ -494,7 +494,7 @@ div#archive {
     align-items: center;
     justify-content: center;
     position: relative;
-    top: -10px;
+    top: -8px;
     /* 调整这个值以移动到合适位置 */
     text-align: center;
 }
