@@ -3,10 +3,10 @@ subtitle: ''
 description: 'hiver Blog'
 keywords: null
 author: hiver
-language: en
+language: zh-CN
 timezone: ''
-url: https://hiver-wt.github.io/Hexo
-root: /Hexo/
+url: https://hiver-wt.github.io/blog
+root: /blog/
 permalink: ':year/:month/:day/:title/'
 permalink_defaults: null
 pretty_urls:
@@ -62,7 +62,7 @@ ignore: null
 theme: butterfly
 deploy:
   type: git
-  repo: https://github.com/hiver-wt/Hexo.git
+  repo: https://github.com/hiver-wt/blog.git
   branch: gh-pages
 
 # 本地搜索
@@ -76,7 +76,7 @@ search:
 categoryBar:
   enable: true # 开关
   priority: 5 #过滤器优先权
-  enable_page: /Hexo/ # 应用页面
+  enable_page: /blog/ # 应用页面
   layout: # 挂载容器类型
     type: id
     name: recent-posts
@@ -94,7 +94,7 @@ categoryBar:
 magnet:
   enable: true
   priority: 1
-  enable_page: /Hexo/
+  enable_page: /blog/
   type: categories
   devide: 2
   display:
