@@ -45,7 +45,7 @@ prismjs:
   tab_replace: ''
 index_generator:
   path: ''
-  per_page: 6
+  per_page: 18
   order_by: '-date'
 default_category: uncategorized
 category_map: null

@@ -10,7 +10,7 @@
 }
 
 .menus_items {
-    display: flex;
+    /*display: flex;*/
     align-items: center;
 }
 
@@ -42,11 +42,11 @@
 }
 
 #search-button {
-    margin-right: 10px;
+    margin-right: 15px;
     /* 搜索按钮和其他项目的间距 */
 }
 
 #toggle-menu {
-    margin-left: 10px;
+    margin-left: 15px;
     /* 汉堡菜单和其他项目的间距 */
 }
