@@ -5,7 +5,7 @@ keywords: null
 author: hiver
 language: en
 timezone: ''
-url: https://zz1009959.github.io/Hexo
+url: https://hiver-wt.github.io/Hexo
 root: /Hexo/
 permalink: ':year/:month/:day/:title/'
 permalink_defaults: null
@@ -62,7 +62,7 @@ ignore: null
 theme: butterfly
 deploy:
   type: git
-  repo: https://github.com/zz1009959/Hexo.git
+  repo: https://github.com/hiver-wt/Hexo.git
   branch: gh-pages
 
 # 本地搜索
