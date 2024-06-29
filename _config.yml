@@ -5,7 +5,7 @@ keywords: null
 author: hiver
 language: zh-CN
 timezone: ''
-url: https://hiver-wt.github.io/blog
+url: https://hiver-wt.github.io/blog/
 root: /
 permalink: ':year/:month/:day/:title/'
 permalink_defaults: null
