@@ -9,7 +9,7 @@ swiper_index: 3 #置顶轮播图顺序，非负整数，数字越大越靠前
 # 2 Output an Image
 ## 2.1 The PPM Image Format
 
-<img src="/blog/_posts/RTimage/Pasted image 20240201173749.png" alt="示例图片" style="zoom:50%;" />
+<img src="/RTimage/Pasted image 20240201173749.png" alt="示例图片" style="zoom:50%;" />
 
 Output such a thing
 ```c++
@@ -53,7 +53,9 @@ Now we need to write cout's output stream to a file. Fortunately we have the com
 <img src="/blog/_posts/RTimage/Pasted image 20240202131111.png" alt="示例图片" style="zoom:50%;" />
 
 First PPM image
-![[Pasted image 20240202131653.png]]
+
+<img src="/blog/_posts/RTimage/Pasted image 20240202131653.png" alt="示例图片" style="zoom:50%;" />
+
 open it a text editor and see
 ```c++
 P3
@@ -97,7 +99,7 @@ std::clog << "\rDone.                 \n";
 # 3 The Vec3 Class
 Almost all graphics programs use 4D vectors(3D position plus a homogeneous coordinate for geometry, or RGB plus an alpha transparency component for colors). For our purposes, three coordinates suffice.
 we declare two aliases for `vec3`: `point3` and `color`. Since these two types are just aliases for `vec3`, you won't get warnings if you pass a `color` to a function expecting a `point3`, and nothing is stopping you from adding a `point3` to a `color`, but it makes the code a little bit easier to read and to understand.
-[[C++#运算符及其重载]]
+
 ```c++
 #pragma once
 #include<cmath>
