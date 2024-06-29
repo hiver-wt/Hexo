@@ -9,7 +9,7 @@ nav:
 
 # Menu 目錄
 menu:
-  主页: / || icon-home || faa-tada  #首页
+  主页: / || icon-shouye || faa-tada  #首页
   归档: /archives/ || icon-guidang || faa-tada  #归档
   标签: /tags/ || icon-biaoqian || faa-tada #标签
   分类: /categories/ || icon-fenlei || faa-tada  #分类
@@ -934,6 +934,7 @@ css_prefix: true
 inject:
   head:
     - <link rel="stylesheet" href="/blog/css/custom.css" media="defer" onload="this.media='all'">
+    - <link rel="stylesheet" href="/blog/css/headmenu.css" media="defer" onload="this.media='all'">
   bottom:
     # - <script src="xxxx"></script>
     - <script async src="//at.alicdn.com/t/c/font_4603888_psgxuvxqu9l.js"></script> 
