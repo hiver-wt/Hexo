@@ -9,7 +9,7 @@ swiper_index: 3 #置顶轮播图顺序，非负整数，数字越大越靠前
 # 2 Output an Image
 ## 2.1 The PPM Image Format
 
-<img src="/RTimage/Pasted image 20240201173749.png" alt="示例图片" style="zoom:50%;" />
+<img src="/test/1.jpg" alt="示例图片" style="zoom:50%;" />
 
 Output such a thing
 ```c++

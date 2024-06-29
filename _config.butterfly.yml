@@ -96,7 +96,20 @@ cover:
     - /image/index6.jpg
     - /image/index7.jpg
     - /image/index8.jpg
-    - /image/index9.jpg
+    - /image/index10.jpg
+    - /image/index11.jpg
+    - /image/index12.jpg
+    - /image/index13.jpg
+    - /image/index14.jpg
+    - /image/index15.jpg
+    - /image/index16.jpg
+    - /image/index17.jpg
+    - /image/index18.jpg
+    - /image/index19.jpg
+    - /image/index20.jpg
+    - /image/index21.jpg
+    - /image/index22.jpg
+    - /image/index23.jpg
     
 
 # Replace Broken Images (替換無法顯示的圖片)
@@ -660,7 +673,7 @@ text_align_justify: false
 # Website Background (設置網站背景)
 # can set it to color or image (可設置圖片 或者 顔色)
 # The formal of image: url(http://xxxxxx.com/xxx.jpg)
-background: url(/blog/image/bg1.jpg)
+background: url(/blog/image/bg4.jpg)
   
 # Footer Background
 footer_bg: false
