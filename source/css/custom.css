@@ -59,6 +59,10 @@
     font-display: block;
 }
 
+body {
+    font-family: YOUYUAN;
+}
+
 /* 翻页按钮居中 */
 #pagination {
     width: 100%;
@@ -423,7 +427,7 @@ div#archive {
 .parallax>use:nth-child(1) {
     animation-delay: -2s;
     animation-duration: 7s;
-    fill: #f7f9febd;
+    fill: #f7fbfebd;
 }
 
 .parallax>use:nth-child(2) {
