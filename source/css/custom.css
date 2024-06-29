@@ -499,6 +499,15 @@ div#archive {
     text-align: center;
 }
 
+/* 自定义图标 */
+svg.icon {
+    width: 1.28em;
+    height: 1.28em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
 /* 文章总结部分 */
 .post-copyright {
     background: linear-gradient(135deg, #ffffff, #e6f7ff, #fff0f5);

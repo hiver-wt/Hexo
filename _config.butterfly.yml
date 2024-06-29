@@ -9,15 +9,15 @@ nav:
 
 # Menu 目錄
 menu:
-  Home: / || fas fa-home  #首页
-  Archives: /archives/ || fas fa-archive  #归档
-  Tags: /tags/ || fas fa-tags #标签
-  Categories: /categories/ || fas fa-folder-open  #分类
+  主页: / || icon-home || faa-tada  #首页
+  归档: /archives/ || icon-guidang || faa-tada  #归档
+  标签: /tags/ || icon-biaoqian || faa-tada #标签
+  分类: /categories/ || icon-fenlei || faa-tada  #分类
   #List||fas fa-list:  #列表
     #Music: /music/ || fas fa-music  
     #Movie: /movies/ || fas fa-video
-  Link: /link/ || fas fa-link 
-  About: /about/ || fas fa-heart
+  链接: /link/ || icon-lianjie || faa-tada
+  关于: /about/ || icon-guanyuwomen || faa-tada
 
 # Code Blocks (代碼相關)
 # --------------------------------------
@@ -936,6 +936,7 @@ inject:
     - <link rel="stylesheet" href="/blog/css/custom.css" media="defer" onload="this.media='all'">
   bottom:
     # - <script src="xxxx"></script>
+    - <script async src="//at.alicdn.com/t/c/font_4603888_psgxuvxqu9l.js"></script> 
 
 # CDN
 # Don't modify the following settings unless you know how they work
