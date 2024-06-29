@@ -500,20 +500,6 @@ div#archive {
     font-weight: bold;
 }
 
-#post-meta {
-    color: lightblue;
-}
-
-#post-meta .meta-firstline,
-#post-meta .meta-secondline,
-#post-meta .post-meta-date,
-#post-meta .post-meta-categories,
-#post-meta .post-meta-pv-cv,
-#post-meta .post-meta-label,
-#post-meta .post-meta-icon {
-    color: lightblue;
-}
-
 
 /* 自定义图标 */
 svg.icon {
@@ -563,14 +549,14 @@ h6::before {
 
 /* 设置风车颜色 */
 #content-inner.layout h1::before {
-    color: #3a37f1;
+    color: #ffffff;
     margin-left: -1.55rem;
     font-size: 1.3rem;
     margin-top: -0.23rem;
 }
 
 #content-inner.layout h2::before {
-    color: #4f66ce;
+    color: #9ef0ff;
     margin-left: -1.35rem;
     font-size: 1.1rem;
     margin-top: -0.12rem;
@@ -584,21 +570,21 @@ h6::before {
 }
 
 #content-inner.layout h4::before {
-    color: #5da4d4;
+    color: #1d84c9;
     margin-left: -1.05rem;
     font-size: 0.8rem;
     margin-top: -0.09rem;
 }
 
 #content-inner.layout h5::before {
-    color: #a8daf7;
+    color: #006ba8;
     margin-left: -0.9rem;
     font-size: 0.7rem;
     margin-top: 0rem;
 }
 
 #content-inner.layout h6::before {
-    color: #ffffff;
+    color: #b0dcff;
     margin-left: -0.9rem;
     font-size: 0.66rem;
     margin-top: 0rem;
