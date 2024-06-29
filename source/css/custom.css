@@ -503,78 +503,7 @@ div#archive {
 svg.icon {
     width: 1.28em;
     height: 1.28em;
-    vertical-align: -0.15em;
+    vertical-align: -0.1em;
     fill: currentColor;
     overflow: hidden;
-}
-
-/* 文章总结部分 */
-.post-copyright {
-    background: linear-gradient(135deg, #ffffff, #e6f7ff, #fff0f5);
-    border-radius: 15px;
-    padding: 25px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    margin: 30px 0;
-    font-family: 'Arial', sans-serif;
-    border: 2px solid #1890ff;
-}
-
-.post-copyright__item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    transition: all 0.3s ease;
-    padding: 10px;
-    border-radius: 8px;
-}
-
-.post-copyright__item:hover {
-    background-color: rgba(24, 144, 255, 0.1);
-    transform: translateX(5px);
-}
-
-.post-copyright__meta {
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-    color: #1890ff;
-    margin-right: 15px;
-    min-width: 120px;
-}
-
-.post-copyright__meta i {
-    margin-right: 8px;
-    font-size: 1.2em;
-}
-
-.post-copyright__info {
-    color: #333;
-    font-size: 1.1em;
-}
-
-.post-copyright__info a {
-    color: #1890ff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.post-copyright__info a:hover {
-    color: #40a9ff;
-}
-
-.post-copyright__notice {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 2px dashed #1890ff;
-    font-size: 0.95em;
-    color: #555;
-    line-height: 1.6;
-}
-
-.post-copyright__title {
-    font-size: 1.4em;
-    color: #1890ff;
-    margin-bottom: 20px;
-    text-align: center;
-    font-weight: bold;
 }
