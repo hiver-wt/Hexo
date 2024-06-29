@@ -15,9 +15,9 @@
 }
 
 .menus_item {
-    margin: 0 4px;
+    /*margin: 0 4px;*/
     /* 增加导航项之间的间距 */
-    margin-top: -5px;
+    margin-top: -10px;
     /* 你可以根据需要调整这个值 */
 }
 
