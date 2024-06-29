@@ -17,6 +17,8 @@
 .menus_item {
     margin: 0 4px;
     /* 增加导航项之间的间距 */
+    margin-top: -5px;
+    /* 你可以根据需要调整这个值 */
 }
 
 .site-page {
@@ -29,7 +31,7 @@
 }
 
 .site-page:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
     /* 添加悬停效果 */
 }
 
