@@ -6,7 +6,7 @@ author: hiver
 language: zh-CN
 timezone: ''
 url: https://hiver-wt.github.io/blog
-root: /blog/
+root: /
 permalink: ':year/:month/:day/:title/'
 permalink_defaults: null
 pretty_urls:
@@ -76,7 +76,7 @@ search:
 categoryBar:
   enable: true # 开关
   priority: 5 #过滤器优先权
-  enable_page: /blog/ # 应用页面
+  enable_page: / # 应用页面
   layout: # 挂载容器类型
     type: id
     name: recent-posts
@@ -94,7 +94,7 @@ categoryBar:
 magnet:
   enable: true
   priority: 1
-  enable_page: /blog/
+  enable_page: /
   type: categories
   devide: 2
   display:
@@ -131,7 +131,7 @@ magnet:
 swiper:
   enable: true # 开关
   priority: 5 #过滤器优先权
-  enable_page: /blog/ # 应用页面
+  enable_page: / # 应用页面
   timemode: date #date/updated
   layout: # 挂载容器类型
     type: id

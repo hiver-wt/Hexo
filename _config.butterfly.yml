@@ -88,15 +88,15 @@ cover:
   position: both
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover:
-    - /blog/image/index1.jpg
-    - /blog/image/index2.jpg
-    - /blog/image/index3.jpg
-    - /blog/image/index4.jpg
-    - /blog/image/index5.jpg
-    - /blog/image/index6.jpg
-    - /blog/image/index7.jpg
-    - /blog/image/index8.jpg
-    - /blog/image/index9.jpg
+    - /image/index1.jpg
+    - /image/index2.jpg
+    - /image/index3.jpg
+    - /image/index4.jpg
+    - /image/index5.jpg
+    - /image/index6.jpg
+    - /image/index7.jpg
+    - /image/index8.jpg
+    - /image/index9.jpg
     
 
 # Replace Broken Images (替換無法顯示的圖片)
@@ -660,7 +660,7 @@ text_align_justify: false
 # Website Background (設置網站背景)
 # can set it to color or image (可設置圖片 或者 顔色)
 # The formal of image: url(http://xxxxxx.com/xxx.jpg)
-background: url(/blog/image/per.jpg)
+background: url(/image/per.jpg)
   
 # Footer Background
 footer_bg: false
@@ -933,7 +933,7 @@ css_prefix: true
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
-    - <link rel="stylesheet" href="/blog/css/custom.css" media="defer" onload="this.media='all'">
+    - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'">
   bottom:
     # - <script src="xxxx"></script>
 
