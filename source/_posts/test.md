@@ -11,4 +11,4 @@ swiper_index: 1 #置顶轮播图顺序，非负整数，数字越大越靠前
 正常
 
 图片显示
-{% asset_img 1.jpg This is an example image %}
+<img src="/image/top.jpg" alt="示例图片" style="zoom:50%;" />
