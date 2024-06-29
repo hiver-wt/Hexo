@@ -88,15 +88,15 @@ cover:
   position: both
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover:
-    - /image/index1.jpg
-    - /image/index2.jpg
-    - /image/index3.jpg
-    - /image/index4.jpg
-    - /image/index5.jpg
-    - /image/index6.jpg
-    - /image/index7.jpg
-    - /image/index8.jpg
-    - /image/index9.jpg
+    - /blog/image/index1.jpg
+    - /blog/image/index2.jpg
+    - /blog/image/index3.jpg
+    - /blog/image/index4.jpg
+    - /blog/image/index5.jpg
+    - /blog/image/index6.jpg
+    - /blog/image/index7.jpg
+    - /blog/image/index8.jpg
+    - /blog/image/index9.jpg
     
 
 # Replace Broken Images (替換無法顯示的圖片)
