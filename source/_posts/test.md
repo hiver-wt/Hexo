@@ -11,4 +11,5 @@ swiper_index: 1 #置顶轮播图顺序，非负整数，数字越大越靠前
 正常
 
 图片显示
-<img src="/image/top.jpg" alt="示例图片" style="zoom:50%;" />
+<img src="/blog/image/top.jpg" alt="示例图片" style="zoom:50%;" />
+语法：https://www.fomal.cc/posts/2013454d.html
