@@ -72,7 +72,15 @@
     font-display: block;
 }
 
+body {
+    font-family: YOUYUAN;
+    font-size: 15px;
+}
 
+code {
+    font-family: cmL, Consolas_1, YOUYUAN;
+    font-size: 14px;
+}
 
 /* 翻页按钮居中 */
 #pagination {
