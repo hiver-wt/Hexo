@@ -10,7 +10,7 @@
 }
 
 .menus_items {
-    /*display: flex;*/
+    display: flex;
     align-items: center;
 }
 
