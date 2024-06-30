@@ -84,7 +84,7 @@ categoryBar:
   column: odd # odd：3列 | even：4列
   row: 1 #显示行数，默认两行，超过行数切换为滚动显示
   message:
-    - descr: C++
+    - descr: RTR4
       cover: /blog/image/index24.jpg
     - descr: CG
       cover: /blog/image/index25.jpg
@@ -98,12 +98,12 @@ magnet:
   type: categories
   devide: 2
   display:
-    - name: C++
-      display_name: C++
+    - name: RTR4
+      display_name: RTR4
       icon: 📚
-    - name: CG
-      display_name: CG
-      icon: 🎮
+    # - name: CG
+    #   display_name: CG
+    #   icon: 🎮
     # - name: C++
     #   display_name: 小冰の编程学习
     #   icon: 👩‍💻
