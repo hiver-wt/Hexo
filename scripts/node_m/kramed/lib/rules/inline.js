@@ -8,7 +8,8 @@ var noop = _utils.noop;
  */
 
 var inline = {
-  escape: /^\\([\\`*{}\[\]()#$+\-.!_>])/,
+  //escape: /^\\([\\`*{}\[\]()#$+\-.!_>])/,     
+  escape: /^\\([`*\[\]()#$+\-.!_>])/,
   autolink: /^<([^ >]+(@|:\/)[^ >]+)>/,
   url: noop,
   html: /^<!--[\s\S]*?-->|^<(\w+(?!:\/|[^\w\s@]*@)\b)*?(?:"[^"]*"|'[^']*'|[^'">])*?>([\s\S]*?)?<\/\1>|^<(\w+(?!:\/|[^\w\s@]*@)\b)(?:"[^"]*"|'[^']*'|[^'">])*?>/,
@@ -17,7 +18,8 @@ var inline = {
   nolink: /^!?\[((?:\[[^\]]*\]|[^\[\]])*)\]/,
   reffn: /^!?\[\^(inside)\]/,
   strong: /^__([\s\S]+?)__(?!_)|^\*\*([\s\S]+?)\*\*(?!\*)/,
-  em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,
+  //em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,    
+  em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,
   code: /^(`+)\s*([\s\S]*?[^`])\s*\1(?!`)/,
   br: /^ {2,}\n(?!\s*$)/,
   del: noop,
@@ -81,7 +83,7 @@ inline.gitbook = merge({}, inline.gfm, {
   tplexpr: /^{%\s*(.*?)\s*(?=%})%}/,
 });
 inline.gitbook.text = replace(inline.gfm.text)
-  ('~]|', '~]|'+inline.gitbook.tplvar.source+'|'+inline.gitbook.tplexpr.source+'|')
+  ('~]|', '~]|' + inline.gitbook.tplvar.source + '|' + inline.gitbook.tplexpr.source + '|')
   ();
 
 /**

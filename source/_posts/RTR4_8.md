@@ -27,15 +27,31 @@ mathjax: true
 #### 名词解释：
 Radiant Flux：是最基本的单位，指辐射
 能量随时间的流动变化，又叫做功率，通常用Φ来表示，单位是 W，瓦特。
-$$\Phi=\frac{dQ}{dt}$$
+$$
+\Phi=\frac{dQ}{dt}
+$$
 
 Radiance：
 
 Radiant Intensity：每单位立体角的Radiant Flux，用符号 I 表示，单位 $W·sr^{-1}$，瓦特每球面度
-$$I=\frac{d\Phi}{d\omega}$$
+
+$$
+I=\frac{d\Phi}{d\omega}
+$$
+
 
 Irradiance：指入射表面的Radiant Flux，即单位时间内到达单位面积的Radiant Flux，或到达单位面积的Radiant Flux
 用符号 E 表示，单位$W/𝑚^2$，瓦特每平方米。
 
 > Irradiance可以写成Radiance在入射光所形成的半球上的积分：
-$$\frac{d\Phi}{dA}=E=\int_\Omega L(\omega)cos\theta d\omega$$
+$$
+\frac{d\Phi}{dA}=E=\int_\Omega L(\omega)cos\theta d\omega
+$$
+
+```C++
+#include<iostream>
+int main()
+{
+
+}
+```
