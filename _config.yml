@@ -187,8 +187,20 @@ tag_plugins:
 
 
 # 公式渲染
-mathjax:
+math:
   enable: true
-  per_page: false
-  engine: 'mathjax' # or 'katex'
-  cdn: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  every_page: true
+
+  mathjax:
+    enable: true
+    cdn: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+
+  katex:
+    enable: false
+
+# 公式渲染
+# mathjax:
+#   enable: true
+#   per_page: true
+#   engine: 'mathjax' # or 'katex'
+#   cdn: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
