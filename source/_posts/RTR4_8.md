@@ -4,7 +4,7 @@ date: 2024-06-28 16:20:20
 tags: CG
 categories: RTR4
 description: RTR4 Chapter 8 Light and Color
-swiper_index: 2 #置顶轮播图顺序，非负整数，数字越大越靠前
+mathjax: true
 ---
 # Light and Color
 
