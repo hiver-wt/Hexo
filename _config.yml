@@ -185,6 +185,7 @@ tag_plugins:
     carousel: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js
     tag_plugins_css: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css
 
+
 # 公式渲染
 mathjax:
   enable: true

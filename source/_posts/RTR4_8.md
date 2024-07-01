@@ -14,17 +14,19 @@ mathjax: true
 
 ### radiometry
 
-#### 前置知识
-1. 常用物理量总结：
-<img src="/blog/img/RTR4/c8/202306131534243.png" alt="辐射量及其单位" style="zoom:50%;" />
+- 前置知识
+  1. 常用物理量总结：
+  <img src="/blog/img/RTR4/c8/202306131534243.png" alt="辐射量及其单位" style="zoom:50%;" />
 
-2. 球面坐标：
-<img src="/blog/img/RTR4/c8/20240320122411.png" alt="球面坐标" style="zoom:50%;" />
+  2. 球面坐标：
+  <img src="/blog/img/RTR4/c8/20240320122411.png" alt="球面坐标" style="zoom:50%;" />
 
-3. 投影面积：
-<img src="/blog/img/RTR4/c8/20240320122536.png" alt="投影面积" style="zoom:50%;" />
+  3. 投影面积：
+  <img src="/blog/img/RTR4/c8/20240320122536.png" alt="投影面积" style="zoom:50%;" />
 
-#### 名词解释：
+
+- 名词解释：
+  
 Radiant Flux：是最基本的单位，指辐射
 能量随时间的流动变化，又叫做功率，通常用Φ来表示，单位是 W，瓦特。
 $$
@@ -37,7 +39,9 @@ Radiant Intensity：每单位立体角的Radiant Flux，用符号 I 表示，单
 
 $$
 I=\frac{d\Phi}{d\omega}
-$$
+$$ 
+
+$\Gamma(z)=\int_0^\infty t^{z-1}e^{-t}dt.$
 
 
 Irradiance：指入射表面的Radiant Flux，即单位时间内到达单位面积的Radiant Flux，或到达单位面积的Radiant Flux

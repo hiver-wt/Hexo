@@ -1035,12 +1035,11 @@ CDN:
 # 公式渲染
 math:
   enable: true
-  # Default true. If true, it will load mathjax or katex script every page.
-  # If false, it only loads mathjax or katex script at the specific post which has `math: true` in Front-matter.
   every_page: false
 
-  # MathJax Support
   mathjax:
     enable: true
-    # Use https://mathjax.org/
     cdn: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+
+  katex:
+    enable: false
