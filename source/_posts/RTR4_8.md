@@ -38,4 +38,4 @@ Irradiance：指入射表面的Radiant Flux，即单位时间内到达单位面�
 用符号 E 表示，单位$W/𝑚^2$，瓦特每平方米。
 
 > Irradiance可以写成Radiance在入射光所形成的半球上的积分：
-> $$\frac{d\Phi}{dA}=E=\int_\Omega L(\omega)cos\theta d\omega$$
+$$\frac{d\Phi}{dA}=E=\int_\Omega L(\omega)cos\theta d\omega$$
