@@ -47,4 +47,4 @@ G项，几何阴影遮蔽项，评估了很多之后选了Schlick model，不过
 
 ## IBL
 要将这种着色模型与IBL结合使用，需要解决radiance积分问题，通常使用重要性采样进行处理。下面的方程描述了这种数值积分过程：
-<div>$$ ∫_{H} {Li(l)f(l, v)cosθ_ldl} ≈\frac{1}{N}∑_{k=1}^{N}\frac{L_i(l_k)f(l-k, v) cosθ_l_k} {p(l_k, v)} $$</div>
+<div>$$ ∫_{H}{L_i(l)f(l, v)cosθ_ldl} ≈\frac{1}{N}∑_{k=1}^{N} \frac{L_i(l_k)f(l-k, v) cosθ_{l_k}} {p(l_k, v)} $$</div>
