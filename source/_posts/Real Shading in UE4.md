@@ -187,3 +187,12 @@ float3 ApproximateSpecularIBL( float3 SpecularColor , float Roughness, float3 N,
     return PrefilteredColor * ( SpecularColor * EnvBRDF.x + EnvBRDF.y );
 }
 ```
+
+# Material Model
+我们的材质模型是对Disney模型的简化，注重实时渲染的效率，限制参数的数量很重要，它可以优化G-buffer的空间，减少纹理存储和读取，最小化在片元着色器中混合材质层(material layers)的消耗。
+
+material base：
+ - BaseColor：没啥好说的
+ - Metallic：无需理解介质和导体的反射率，因此错误的可能性更小。
+ - Roughness: 比gloss好理解
+ - Cavity: 用于小规模阴影（small-scale shadowing）.
