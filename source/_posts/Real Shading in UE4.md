@@ -45,7 +45,7 @@ G项，几何阴影遮蔽项，评估了很多之后选了Schlick model，不过
 其中$F_0$是在法线入射时的镜面反射率（与法线平行）
 
 
-# Image-Based Lighting
+## Image-Based Lighting
 
 要将这种着色模型与IBL结合使用，需要解决radiance积分问题，通常使用重要性采样进行处理。下面的方程描述了这种数值积分过程：
 <div>$$ ∫_{H}{L_i(l)f(l, v)cosθ_ldl} ≈\frac{1}{N}∑_{k=1}^{N} \frac{L_i(l_k)f(l-k, v) cosθ_{l_k}} {p(l_k, v)} $$</div>
@@ -139,3 +139,51 @@ float3 PrefilterEnvMap( float Roughness, float3 R )
 
 第二个sum包括了其他所有东西，它其实就是specular BRDF和纯白色环境的结合，即$L_i(l_k)=1$,代入 Schlick’s Fresnel：$F(v, h) = F_0 + (1 −F_0)(1 − v · h)^5$，观察发现$F_0$可以提到积分外面
 <div>$$\int_{H} f(\mathbf{l}, \mathbf{v}) \cos \theta_{\mathbf{l} } \mathrm{d} \mathbf{l}=F_{0} \int_{H} \frac{f(\mathbf{l}, \mathbf{v})}{F(\mathbf{v}, \mathbf{h} ) }\left(1-(1-\mathbf{v} \cdot \mathbf{h})^{5}\right) \cos \theta_{\mathbf{l} } \mathrm{d} \mathbf{l}+\int_{H} \frac{f(\mathbf{l}, \mathbf{v}) } {F(\mathbf{v}, \mathbf{h} ) }(1-\mathbf{v} \cdot \mathbf{h} )^{5} \cos \theta_{\mathbf{l}} \mathrm{d} \mathbf{l}$$</div>
+
+这就剩下两个输入（$Roughness and cos\theta-$）和两个输出对𝐹0的缩放和偏置（bias），所有的这些都在[0,1]之内，我们预计算出这个方程的结果并且把它存到一张2D的look-up table里面(LUT)
+
+在完成这项工作之后，我们发现了既有的同时进行的研究，这些研究得出了几乎与我们的解决方案完全相同的结果。尽管 Gotanda 使用了一个3D LUT，而Drobot 将其优化为一个2D的，与我们的方法非常相似。此外，在这门课程的一部分中，Lazarov 迈出了更进一步，通过提出了几个类似积分的解析近似方法。
+
+代码：
+```c++
+float2 IntegrateBRDF( float Roughness, float NoV )
+{
+    float3 V;
+    V.x = sqrt( 1.0f - NoV * NoV ); // sin
+    V.y = 0;
+    V.z = NoV; // cos
+    float A = 0;
+    float B = 0;
+    const uint NumSamples = 1024;
+    for( uint i = 0; i < NumSamples; i++ )
+    {
+        float2 Xi = Hammersley( i, NumSamples );
+        float3 H = ImportanceSampleGGX( Xi, Roughness, N );
+        float3 L = 2 * dot( V, H ) * H - V;
+        float NoL = saturate( L.z );
+        float NoH = saturate( H.z );
+        float VoH = saturate( dot( V, H ) );
+        if( NoL > 0 )
+        {
+            float G = G_Smith( Roughness, NoV, NoL );
+            float G_Vis = G * VoH / (NoH * NoV);
+            float Fc = pow( 1 - VoH, 5 );
+            A += (1 - Fc) * G_Vis;
+            B += Fc * G_Vis;
+        }
+    }
+    return float2( A, B ) / NumSamples;
+}
+```
+
+最后，为了把重要性采样的抽样参考，我们把两个预计算结果相乘：
+```c++
+float3 ApproximateSpecularIBL( float3 SpecularColor , float Roughness, float3 N, float3 V )
+{
+    float NoV = saturate( dot( N, V ) );
+    float3 R = 2 * dot( V, N ) * N - V;
+    float3 PrefilteredColor = PrefilterEnvMap( Roughness, R );
+    float2 EnvBRDF = IntegrateBRDF( Roughness, NoV );
+    return PrefilteredColor * ( SpecularColor * EnvBRDF.x + EnvBRDF.y );
+}
+```
