@@ -42,7 +42,7 @@ G项，几何阴影遮蔽项，评估了很多之后选了Schlick model，不过
 ### Specular F
 对于Fresnel，我们用最典型的Schlick's approximation，但是做了一个小修改：我们用球面高斯(Spherical Gaussian)近似来替代power。它的计算效率略高并且没啥差异（imperceptible）公式是：
 <div> $$F(v·h)=F_0+(1-F_0)2^{(-5.55473(v·n)-6.98316)(v·h)} $$</div>
-其中$F_0$是在法线入射时的镜面反射率（与法线平行）。
+其中$F_0$是在法线入射时的镜面反射率（与法线平行）
 
 # Image-Based Lighting
 
