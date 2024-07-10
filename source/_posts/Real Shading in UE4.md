@@ -42,10 +42,10 @@ G项，几何阴影遮蔽项，评估了很多之后选了Schlick model，不过
 ### Specular F
 对于Fresnel，我们用最典型的Schlick's approximation，但是做了一个小修改：我们用球面高斯(Spherical Gaussian)近似来替代power。它的计算效率略高并且没啥差异（imperceptible）公式是：
 <div> $$F(v·h)=F_0+(1-F_0)2^{(-5.55473(v·n)-6.98316)(v·h)} $$</div>
-其中$F_0$是在法线入射时的镜面反射率（与法线平行）
+其中$F_0$是在法线入射时的镜面反射率(与法线平行)
 
 
-## Image-Based Lighting
+# Image-Based Lighting
 
 要将这种着色模型与IBL结合使用，需要解决radiance积分问题，通常使用重要性采样进行处理。下面的方程描述了这种数值积分过程：
 <div>$$ ∫_{H}{L_i(l)f(l, v)cosθ_ldl} ≈\frac{1}{N}∑_{k=1}^{N} \frac{L_i(l_k)f(l-k, v) cosθ_{l_k}} {p(l_k, v)} $$</div>
