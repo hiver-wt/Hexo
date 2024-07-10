@@ -102,3 +102,7 @@ float3 SpecularIBL( float3 SpecularColor , float Roughness, float3 N, float3 V )
 }
 ```
 即使使用重要性采样，仍然需要进行许多样本的采集。通过使用 mip map 可以显著减少样本数量，但是为了保证足够的质量，仍然需要大于16个样本。由于我们对每个像素进行局部反射的多个环境贴图之间进行混合，因此我们实际上只能负担得起每个像素的单一采样。
+
+## Split Sum Approximation
+我们把上面那个公式拆成两个，每一部分都能预计算，这个近似对于恒定的$L_i(l)$是准确的，并且对于普遍环境而言相当准确
+<div>$$ \frac{1}{N}∑_{k=1}^{N} \frac{L_i(l_k)f(l_k, v) cosθ_{l_k}} {p(l_k, v)} = (\frac{1}{N}∑_{k=1}^{N}L_i(l_k) ) (\frac{1}{N}∑_{k=1}^{N}\frac{f(l_k,v)cos\theta_{l_k}} {p(l_k,v)} )$$</div>
