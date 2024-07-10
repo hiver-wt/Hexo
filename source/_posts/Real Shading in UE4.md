@@ -42,9 +42,63 @@ G项，几何阴影遮蔽项，评估了很多之后选了Schlick model，不过
 ### Specular F
 对于Fresnel，我们用最典型的Schlick's approximation，但是做了一个小修改：我们用球面高斯(Spherical Gaussian)近似来替代power。它的计算效率略高并且没啥差异（imperceptible）公式是：
 <div> $$F(v·h)=F_0+(1-F_0)2^{(-5.55473(v·n)-6.98316)(v·h)} $$</div>
-其中$F_0$是在法线入射时的镜面反射率。（与法线平行）
-
+其中$F_0$是在法线入射时的镜面反射率（与法线平行）。
 
 # IBL
+
 要将这种着色模型与IBL结合使用，需要解决radiance积分问题，通常使用重要性采样进行处理。下面的方程描述了这种数值积分过程：
 <div>$$ ∫_{H}{L_i(l)f(l, v)cosθ_ldl} ≈\frac{1}{N}∑_{k=1}^{N} \frac{L_i(l_k)f(l-k, v) cosθ_{l_k}} {p(l_k, v)} $$</div>
+
+基于GGX的镜面反射计算，并结合了IBL来模拟光照效果。
+```C++
+float3 ImportanceSampleGGX( float2 Xi, float Roughness, float3 N )
+{
+    float a = Roughness * Roughness;
+    float Phi = 2 * PI * Xi.x;
+    float CosTheta = sqrt( (1 - Xi.y) / ( 1 + (a*a - 1) * Xi.y ) );
+    float SinTheta = sqrt( 1 - CosTheta * CosTheta );
+    float3 H;
+
+    H.x = SinTheta * cos( Phi );
+    H.y = SinTheta * sin( Phi );
+    H.z = CosTheta;
+
+    float3 UpVector = abs(N.z) < 0.999 ? float3(0,0,1) : float3(1,0,0);
+    float3 TangentX = normalize( cross( UpVector, N ) );
+    float3 TangentY = cross( N, TangentX );
+
+    // Tangent to world space
+    return TangentX * H.x + TangentY * H.y + N * H.z;
+}
+float3 SpecularIBL( float3 SpecularColor , float Roughness, float3 N, float3 V )
+{
+    float3 SpecularLighting = 0;
+    const uint NumSamples = 1024;
+    for( uint i = 0; i < NumSamples; i++ )
+    {
+        float2 Xi = Hammersley( i, NumSamples );
+        float3 H = ImportanceSampleGGX( Xi, Roughness, N );
+        float3 L = 2 * dot( V, H ) * H - V;
+
+        float NoV = saturate( dot( N, V ) );
+        float NoL = saturate( dot( N, L ) );
+        float NoH = saturate( dot( N, H ) );
+        float VoH = saturate( dot( V, H ) );
+        if( NoL > 0 )
+        {
+            float3 SampleColor = EnvMap.SampleLevel( EnvMapSampler , L, 0 ).rgb;
+
+            float G = G_Smith( Roughness, NoV, NoL );
+            float Fc = pow( 1 - VoH, 5 );
+            float3 F = (1 - Fc) * SpecularColor + Fc;
+
+            // Incident light = SampleColor * NoL
+            // Microfacet specular = D*G*F / (4*NoL*NoV)
+            // pdf = D * NoH / (4 * VoH)
+            SpecularLighting += SampleColor * F * G * VoH / (NoH * NoV);
+        }
+    }
+    return SpecularLighting / NumSamples;
+}
+```
+即使使用重要性采样，仍然需要进行许多样本的采集。通过使用 mip map 可以显著减少样本数量，但是为了保证足够的质量，仍然需要大于16个样本。由于我们对每个像素进行局部反射的多个环境贴图之间进行混合，因此我们实际上只能负担得起每个像素的单一采样。
