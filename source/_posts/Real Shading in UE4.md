@@ -104,6 +104,38 @@ float3 SpecularIBL( float3 SpecularColor , float Roughness, float3 N, float3 V )
 ```
 即使使用重要性采样，仍然需要进行许多样本的采集。通过使用 mip map 可以显著减少样本数量，但是为了保证足够的质量，仍然需要大于16个样本。由于我们对每个像素进行局部反射的多个环境贴图之间进行混合，因此我们实际上只能负担得起每个像素的单一采样。
 
-## Split Sum Approximation
+##  Split Sum Approximation
 我们把上面那个公式拆成两个，每一部分都能预计算，这个近似对于恒定的$L_i(l)$是准确的，并且对于普遍环境而言相当准确
 <div>$$ \frac{1}{N}∑_{k=1}^{N} \frac{L_i(l_k)f(l_k, v) cosθ_{l_k}} {p(l_k, v)} = (\frac{1}{N}∑_{k=1}^{N}L_i(l_k) ) (\frac{1}{N}∑_{k=1}^{N}\frac{f(l_k,v)cos\theta_{l_k}} {p(l_k,v)} )$$</div>
+
+##  Pre-Filtered Environment Map
+我们计算第一个部分的不同的roughness values并且把结果存到cubemap的mip-map levels里面，这种方法在工业界很常用。一个很小的区别是我们用重要性采样将cubemap和GGX分布进行卷积，因为这个是微表面模型，所有分布的形状会根据观察表面的角度而改变，我们假设角度为0，也就是$n=v=r$，这种各向同性的假设是第二个近似的来源，不幸的是，这意味着我们在接近水平角度（grazing angles）时无法获得漫长的反射（lengthy reflections）与 split sum approximation相比，这实际上是我们基于IBL解决方案中更大的误差来源。如下所示的代码显示，通过 $cos𝜃_{𝑙_𝑘}$加权可以实现更好的结果。
+
+代码如下：
+```c++
+float3 PrefilterEnvMap( float Roughness, float3 R )
+{
+    float3 N = R;
+    float3 V = R;
+    float3 PrefilteredColor = 0;
+    const uint NumSamples = 1024;
+    for( uint i = 0; i < NumSamples; i++ )
+    {
+        float2 Xi = Hammersley( i, NumSamples );
+        float3 H = ImportanceSampleGGX( Xi, Roughness, N );
+        float3 L = 2 * dot( V, H ) * H - V;
+        float NoL = saturate( dot( N, L ) );
+        if( NoL > 0 )
+        {
+            PrefilteredColor += EnvMap.SampleLevel( EnvMapSampler , L, 0 ).rgb * NoL;
+            TotalWeight += NoL;
+        }
+    }
+    return PrefilteredColor / TotalWeight;
+}
+```
+
+## Environment BRDF
+
+第二个sum包括了其他所有东西，它其实就是specular BRDF和纯白色环境的结合，即$L_i(l_k)=1$,代入 Schlick’s Fresnel：$F(v, h) = F_0 + (1 −F_0)(1 − v · h)^5$，观察发现$F_0$可以提到积分外面
+<div>$$\int_{H} f(\mathbf{l}, \mathbf{v}) \cos \theta_{\mathbf{l} } \mathrm{d} \mathbf{l}=F_{0} \int_{H} \frac{f(\mathbf{l}, \mathbf{v})}{F(\mathbf{v}, \mathbf{h} ) }\left(1-(1-\mathbf{v} \cdot \mathbf{h})^{5}\right) \cos \theta_{\mathbf{l} } \mathrm{d} \mathbf{l}+\int_{H} \frac{f(\mathbf{l}, \mathbf{v}) } {F(\mathbf{v}, \mathbf{h} ) }(1-\mathbf{v} \cdot \mathbf{h} )^{5} \cos \theta_{\mathbf{l}} \mathrm{d} \mathbf{l}$$</div>
